@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+body {
+  background-color: #34495e;
+}
+p {
+  text-align: center;
+  color: crimson;
+}
+div.ex2 {
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
+  margin: auto;
+  width: 250px;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: #191919;
+}
+</style>
+</head>
+<body>
+    {% for c in dic %}
+       <p>{{c}}</p>
+    {% endfor %}
+    <nav>
+       <ul>
+           <li>
+               <form class="logout-link" action="/accounts/login/" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+               </form>
+           </li>
+       </ul>
+   </nav>
+
+</body>
+</html>

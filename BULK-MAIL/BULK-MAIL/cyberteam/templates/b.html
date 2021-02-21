@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to mass mailing</title>
+    <style>
+body {
+  background-color:#6C3483  ;
+}
+
+.btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+header {
+  background-color: #9B59B6 ;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+p {
+  text-align: center;
+  font-size: 75px;
+  }
+  .ref::before {
+  font-weight: bold;
+  color: #808B96;
+  content: "you! ";
+}
+
+</style>
+</head>
+<body>
+
+  <header>
+  <h2><i>WELCOME TO MASS MAILING PROJECT</i></h2>
+</header>
+
+
+<div class="btn-group">
+<form class = "site-form" action= "/accounts/login/" method="post">
+  {% csrf_token %} 
+  {{form}}
+   <button class="button button1">Login</button>
+  
+</form>
+
+<form class = "site-form" action="/accounts/signup/" method="post">
+  {% csrf_token %}
+  {{form}}
+   <button class="button button2">SignUp</button>
+</form>
+  <nav>
+    <ul>
+      
+        <form class="logout-link" action="/accounts/login/" method="post">
+          {% csrf_token %}
+        
+        <button class="button button3">Logout</button>
+      
+    </ul>
+  </nav>
+</form>
+  </div>
+  <p> Hey <span class="ref"> welcome to my web page. This web page allows you to send bulk mail for the valid email address.</span></p>
+  
+</body>
+</html>

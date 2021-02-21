@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Content of the mail</title>
+    <style>
+      body {
+  background-color: #AF7AC5;
+}
+label{
+   font-size: 15px;
+}
+button {
+   font-size: 18px;
+   font-weight: bold;
+   background-color: rgb(10, 119, 13);
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+   opacity: 0.9;
+}
+button:hover {
+   opacity:1;
+}
+.formContainer {
+  width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: #BB8FCE ;  
+        border-radius: 15px ;  
+}
+.formContainer p{
+   font-size: 28px;
+}
+p {
+  text-align: center;
+  font-size: 50px;
+  }
+
+</style>
+</head>
+<body>
+     <div class="ex2"><h1><p>COMPOSE MAIL</p></h1>
+  </div>
+
+  <div class="formContainer">
+    <form class = "site-form" action="/accounts/email/" method="post">
+
+        {% csrf_token %}
+        <label for="email"><b>Email ID</b></label><br>
+        <input type="text"  name="username"><br>
+        <label for="password"><b>password</b></label> <br>
+        <input type="text"  name="password"><br>
+        <label for="subj"><b>Subject</b></label><br>
+        <input type="text"  name="subj"><br>
+       
+        <label for="username"><b>Body of the Message</b></label><br>
+        <textarea rows="4" cols="40" name="body">Enter your text here...</textarea><br>
+        <br>
+        <input type="file" name="mail" accept="file_extension"><br><br>
+        <button type="submit" class="mail" value="mail">send mail</button>
+        
+       
+    </form>
+  </div>
+ <nav>
+       <ul>
+           
+               <form class="logout-link" action="/accounts/logout/" method="post">
+                {% csrf_token %}
+                   <p> <button type="submit">Logout</button></p>
+               </form>
+           
+       </ul>
+   </nav>
+
+
+</body>
+</html>
